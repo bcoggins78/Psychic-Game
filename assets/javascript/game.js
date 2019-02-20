@@ -1,5 +1,5 @@
 
-// Create an array of all possible choices for the computer
+// Create an array of all possible choices 
 var choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // Holds the number of wins, losses, and the guesses the user has made
@@ -16,7 +16,7 @@ var guessesLeftText = document.getElementById("guessesleft-text")
 var guessText = document.getElementById("guesses-text");
 
 
-
+// CPU picks a random letter and contents is displayed in the console
 var cpuPick = function () {
     computerLetter = choices[Math.floor(Math.random() * choices.length)];
     console.log(computerLetter);
@@ -24,45 +24,64 @@ var cpuPick = function () {
 
 cpuPick();
 
+// Clears the guesses array, "guesses left", and "guesses so far" when the game is won or lost and cpu picks another letter from the choices array
 var resetGame = function () {
     guessesLeft = 9;
     guesses = [];
+    guessText.textContent = " ";
     cpuPick();
 };
 
-var addUserChoice = function () {
-    guessText.push(guesses);
-}
+
 
 
 
 
 document.onkeyup = function (event) {
 
-    var userGuess = event.key;
+    // User picks a letter and sets it to lowercase
+    var userGuess = event.key.toLowerCase();
     console.log(userGuess);
 
-    if (userGuess === computerLetter) {
-        wins++;
-        resetGame();
 
-    } else if (guessesLeft > 0) {
-        guessesLeft--;
+    // Checks to see if the user has already picked the letter by checking the guesses array.
+    if (guesses.includes(userGuess) === false) {
 
-    } else if (guessesLeft === 0) {
-        losses++;
-        resetGame();
+        // Verifies the user is picking a letter by looking in the choices array
+        if (choices.includes(userGuess)) {
+
+            // Adds the user's guess to the guesses array
+            guesses.push(userGuess);
+
+            // Adds the user's guess to "Guesses So Far:" in the HTML
+            guessText.textContent += userGuess;
+
+            // Checks to see if the user's guess matches the letter the cpu picked
+            if (userGuess === computerLetter) {
+
+                // if condition is met, the wins count increases by 1 and the game is reset
+                wins++;
+                resetGame();
+
+                // Checks to see how many guesses are left.  If the guesses count is greater than 1, then the "Gueses left" is reduced by 1
+            } else if (guessesLeft > 1) {
+                guessesLeft--;
+
+                // Once the guessesLeft  equals 1, then the losses increases by 1 and the game resets
+            } else if (guessesLeft === 1) {
+                losses++;
+                resetGame();
+
+            }
+        }
+
+        // display the values on the page
+        winsText.textContent = wins;
+        lossesText.textContent = losses;
+        guessesLeftText.textContent = guessesLeft;
+
 
 
     }
-
-    // display the values on the page
-    winsText.textContent = wins;
-    lossesText.textContent = losses;
-    guessesLeftText.textContent = guessesLeft;
-    // guessText.textContent += userGuess;
-
-
 }
-
 
