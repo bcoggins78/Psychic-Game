@@ -6,25 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Psychic Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
+
 </head>
 
 <body>
-    <h1>The Psychic Game</h1>
+    <div class="container margin-top">
+        <div class="jumbotron border border-warning rounded-pill rounded-lg">
+            <h1 class="display-1 text-center">The Psychic Game</h1>
+        </div>
 
-    <p>Guess what letter I'm thinking of.</p>
+        <h2>Guess what letter I'm thinking of</h2>
+        
+        <p class="h6">Wins: <span id="wins-text">0</span></p>
 
-    <p>Wins: <span id="wins-text">0</span></p>
+        <p class="h6">Losses: <span id="losses-text">0</span></p>
 
-    <p>Losses: <span id="losses-text">0</span></p>
+        <p class="h6">Guesses Left: <span id="guessesleft-text">9</span></p>
 
-    <p>Guesses Left: <span id="guessesleft-text">9</span></p>
+        <p class="h6">Guesses So Far: <span id="guesses-text"></span></p>
+    </div>
 
-    <p>Guesses So Far: <span id="guesses-text"></span></p>
 
-    
-    
+
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>

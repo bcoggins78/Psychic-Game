@@ -54,13 +54,14 @@ document.onkeyup = function (event) {
             guesses.push(userGuess);
 
             // Adds the user's guess to "Guesses So Far:" in the HTML
-            guessText.textContent += userGuess;
+            guessText.textContent +=userGuess + " ";
 
             // Checks to see if the user's guess matches the letter the cpu picked
             if (userGuess === computerLetter) {
 
                 // if condition is met, the wins count increases by 1 and the game is reset
                 wins++;
+                alert("How did you know I picked \"" + computerLetter + "\"?");
                 resetGame();
 
                 // Checks to see how many guesses are left.  If the guesses count is greater than 1, then the "Gueses left" is reduced by 1
@@ -70,6 +71,7 @@ document.onkeyup = function (event) {
                 // Once the guessesLeft  equals 1, then the losses increases by 1 and the game resets
             } else if (guessesLeft === 1) {
                 losses++;
+                alert("I picked \"" + computerLetter + "\" I guess it just wasn't in the cards!");
                 resetGame();
 
             }
