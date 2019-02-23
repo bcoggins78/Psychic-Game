@@ -5,6 +5,7 @@ body {
 
 .container {
     margin-top: 15px;
+        
 }
 
 .jumbotron {
@@ -12,3 +13,19 @@ body {
 
 }
 
+.round {
+    border-radius: 50%;
+    border-width: thick;
+    width: 500px;
+    height: 500px;
+    color: yellow;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.col-3 {
+    background-color: darkcyan;
+    border-style: solid;
+    border-color: darkblue;
+    border-width: thin;
+}
