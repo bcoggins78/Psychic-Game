@@ -14,7 +14,9 @@ var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesLeftText = document.getElementById("guessesleft-text")
 var guessText = document.getElementById("guesses-text");
-
+var crystalBall = document.getElementById("crystal-ball");
+var winAudio = document.getElementById("win");
+var loseAudio = document.getElementById("lose");
 
 // CPU picks a random letter and contents is displayed in the console
 var cpuPick = function () {
@@ -61,6 +63,9 @@ document.onkeyup = function (event) {
 
                 // if condition is met, the wins count increases by 1 and the game is reset
                 wins++;
+                winAudio.play();
+                crystalBall.classList.remove("lose");
+                crystalBall.classList.add("win");
                 alert("How did you know I picked \"" + computerLetter + "\"?");
                 resetGame();
 
@@ -70,6 +75,9 @@ document.onkeyup = function (event) {
 
                 // Once the guessesLeft  equals 1, then the losses increases by 1 and the game resets
             } else if (guessesLeft === 1) {
+                crystalBall.classList.remove("win");
+                crystalBall.classList.add("lose");
+                loseAudio.play();
                 losses++;
                 alert("I picked \"" + computerLetter + "\" I guess it just wasn't in the cards!");
                 resetGame();

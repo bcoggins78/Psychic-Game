@@ -29,3 +29,11 @@ body {
     border-color: darkblue;
     border-width: thin;
 }
+
+.win {
+    background-color: green;
+}
+
+.lose {
+    background-color: red;
+}
