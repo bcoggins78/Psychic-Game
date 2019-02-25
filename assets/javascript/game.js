@@ -62,10 +62,10 @@ document.onkeyup = function (event) {
             if (userGuess === computerLetter) {
 
                 // if condition is met, the wins count increases by 1 and the game is reset
-                wins++;
-                winAudio.play();
                 crystalBall.classList.remove("lose");
                 crystalBall.classList.add("win");
+                winAudio.play();
+                wins++;
                 alert("How did you know I picked \"" + computerLetter + "\"?");
                 resetGame();
 
