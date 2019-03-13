@@ -1,23 +1,31 @@
-# Psychic-Game
+# Psychic Game
 
-## Option One: Psychic Game (Basic)
 
-![Psychic]
+### UNC Coding Bootcamp Week 3 Homework Project
 
-1. [Watch the demo](https://youtu.be/qTc45Lox97g).
 
-2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, and the user has to guess which letter the app chose. Put the following text on your page:
 
-3. Guess what letter I'm thinking of
+**[https://bcoggins78.github.io/Psychic-Game/](https://bcoggins78.github.io/Psychic-Game/)**
 
-4. Wins: (# of times the user has guessed the letter correctly)
+Week 3 introduces the use of Javascript.  The project was built with:
 
-5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
 
-6. Guesses Left: (# of guesses left. This will update)
 
-7. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
+Here is how to play this game:
 
-8. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+There will be a random letter generated at the beginning of the game. The purpose is to guess the letter the computer chose by pressing keys on the keyboard.  The player will have 9 chances to guess the correct letter.  If the correct letter is chosen, an alert will display on the screen along with an applause notifying the player of their success.  The same will happen if all chances are used up except the alert will notify the player of their loss along with an appropriate sound file.  
 
-9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+Things to note:
+   * CSS and Bootstrap was used to shape the container to add a crystal ball theme.
+   * Used JavaScript to check for duplicate keystrokes so the same key is not used multiple times.
+   * Elements on the screen are updated as keystrokes are used and games are won or lost. For example, the crystal ball will turn green when a game is won, and turn red when it is lost.
+
+   ![Psychic Game](/assets/images/psychic_game.jpg)
+
+
+
+
